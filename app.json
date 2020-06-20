@@ -23,6 +23,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "A e-commerce app to buy and sell stuff that you don't have a use for",
+    "githubUrl": "https://github.com/Yajassardana/SellOn-React-native"
   }
 }
