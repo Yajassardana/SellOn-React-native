@@ -8,6 +8,8 @@ import {
 	TouchableHighlight,
 	TouchableWithoutFeedback,
 	TouchableOpacity,
+	TouchableNativeFeedback,
+	Button,
 } from 'react-native';
 
 export default function App() {
@@ -23,21 +25,18 @@ export default function App() {
 					}}
 				/>
 			</TouchableWithoutFeedback>
-			<TouchableOpacity>
-				<Image
-					source={{
-						uri: 'https://avatars1.githubusercontent.com/u/62782513?s=60&v=4',
-					}}
-				/>
-			</TouchableOpacity>
-			<TouchableHighlight>
-				<Image
-					source={{
-						uri: 'https://avatars1.githubusercontent.com/u/62782513?s=60&v=4',
-					}}
-				/>
-			</TouchableHighlight>
+			<TouchableNativeFeedback>
+				<View
+					style={{ width: 200, height: 70, backgroundColor: 'dodgerblue' }}
+				></View>
+			</TouchableNativeFeedback>
 			{/*Native has onPress instead of on click event*/}
+
+			<Button
+				color='orange'
+				title='click me'
+				onPress={() => console.log('lol')}
+			/>
 		</SafeAreaView>
 	);
 }
