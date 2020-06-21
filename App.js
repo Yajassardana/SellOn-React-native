@@ -11,11 +11,12 @@ import {
 	TouchableNativeFeedback,
 	Button,
 	Alert, // alert is not a component, its a react native api with some built in methods
+	Platform,
 } from 'react-native';
 
 export default function App() {
 	return (
-		<SafeAreaView style={styles.container}>
+		<SafeAreaView style={[styles.container, containerStyle]}>
 			<Text onPress={() => console.log('pressed')}>
 				Happy for my first app!
 			</Text>
@@ -64,11 +65,12 @@ export default function App() {
 	);
 }
 
+const containerStyle = { backgroundColor: 'orange' };
+
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: 'white',
-		alignItems: 'center',
-		justifyContent: 'center',
+		paddingTop: Platform.OS === 'android' ? 20 : 0, // Platform module has platoform info like OS and Version
 	},
 });
