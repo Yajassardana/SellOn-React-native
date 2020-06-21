@@ -1,5 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
+import {
+	StyleSheet,
+	Text,
+	View,
+	SafeAreaView,
+	Image,
+	TouchableHighlight,
+	TouchableWithoutFeedback,
+	TouchableOpacity,
+} from 'react-native';
 
 export default function App() {
 	return (
@@ -7,11 +16,27 @@ export default function App() {
 			<Text onPress={() => console.log('pressed')}>
 				Happy for my first app!
 			</Text>
-			<Image
-				source={{
-					uri: 'https://avatars1.githubusercontent.com/u/62782513?s=60&v=4',
-				}}
-			/>
+			<TouchableWithoutFeedback>
+				<Image
+					source={{
+						uri: 'https://avatars1.githubusercontent.com/u/62782513?s=60&v=4',
+					}}
+				/>
+			</TouchableWithoutFeedback>
+			<TouchableOpacity>
+				<Image
+					source={{
+						uri: 'https://avatars1.githubusercontent.com/u/62782513?s=60&v=4',
+					}}
+				/>
+			</TouchableOpacity>
+			<TouchableHighlight>
+				<Image
+					source={{
+						uri: 'https://avatars1.githubusercontent.com/u/62782513?s=60&v=4',
+					}}
+				/>
+			</TouchableHighlight>
 			{/*Native has onPress instead of on click event*/}
 		</SafeAreaView>
 	);
