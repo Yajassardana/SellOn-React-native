@@ -10,6 +10,7 @@ import {
 	TouchableOpacity,
 	TouchableNativeFeedback,
 	Button,
+	Alert, // alert is not a component, its a react native api with some built in methods
 } from 'react-native';
 
 export default function App() {
@@ -34,8 +35,30 @@ export default function App() {
 
 			<Button
 				color='orange'
-				title='click me'
-				onPress={() => console.log('lol')}
+				title='click me alert'
+				onPress={() =>
+					Alert.alert('my title', 'My Message', [
+						{
+							text: 'Yes',
+							onPress: () => {
+								console.log('Yes');
+							},
+						},
+						{
+							text: 'No',
+							onPress: () => {
+								console.log('No');
+							},
+						},
+					])
+				}
+			/>
+			<Button
+				color='blue'
+				title='click me prompt'
+				onPress={() =>
+					Alert.prompt('My title', 'Me message', (text) => console.log(text))
+				}
 			/>
 		</SafeAreaView>
 	);
